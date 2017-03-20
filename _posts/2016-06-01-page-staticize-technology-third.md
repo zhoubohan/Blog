@@ -19,7 +19,7 @@ category: blog
 
 ### Apache下的rewrite配置
 
-1. 虚拟域名配置
+* 虚拟域名配置
 
  找到httpd.conf文件，开启rewrite的相关模式
 
@@ -29,8 +29,7 @@ category: blog
 
 ![page-static-12](/images/pageStatic/page-static-12.png)
 
-
-2. http_vhosts.conf配置文件的配置信息 
+* http_vhosts.conf配置文件的配置信息 
 
 ![page-static-13](/images/pageStatic/page-static-13.png)
 
