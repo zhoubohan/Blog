@@ -13,12 +13,12 @@ category: blog
 1. 必须将PHP的缓存开启
 （在PHP配置文件php.ini中，将<font color=red >output_buffering = on</font>）
 2. 熟悉几个关于PHP缓冲区的相关函数<br>
-<code>
-ob_start() 打开输出控制缓冲<br>
-ob_get_contents() 返回输出缓冲区内容<br>
-ob_clean() 清空输出缓冲区<br>
-ob_get_clean() 得到当前缓冲区内容并删除缓冲区<br>
-</code>
+<ul>
+<li><code>ob_start() 打开输出控制缓冲</code></li>
+<li><code>ob_get_contents() 返回输出缓冲区内容</code></li>
+<li><code>ob_clean() 清空输出缓冲区</code></li>
+<li><code>ob_get_clean() 得到当前缓冲区内容并删除缓冲区</code></li>
+</ul>
 
 ---
 ### demo演示
