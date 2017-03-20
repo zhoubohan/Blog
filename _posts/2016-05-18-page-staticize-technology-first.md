@@ -13,7 +13,7 @@ category: blog
 
 ### 页面纯静态化
 1. 必须将PHP的缓存开启
-（在PHP配置文件php.ini中，将<font color=red >output_buffering = on</font>）
+（在PHP配置文件php.ini中，将output_buffering = on）
 2. 熟悉几个关于PHP缓冲区的相关函数<br>
 <ul>
 <li><code>ob_start() 打开输出控制缓冲</code></li>
@@ -31,7 +31,7 @@ category: blog
 ![page-static-thrid](/images/pageStatic/page-static-thrid.png)
 2. 编写动态模板文件temp.php
 ![page-static-fifth](/images/pageStatic/page-static-fifth.png)
-3. 编写index.php(<font color=red face="consolas">判断是否生成静态文件index.shtml并生成静态文件，同时设置静态文件保存时间</font>)
+3. 编写index.php(判断是否生成静态文件index.shtml并生成静态文件，同时设置静态文件保存时间)
 ![page-static-forth](/images/pageStatic/page-static-forth.png)
 
 ---
