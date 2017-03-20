@@ -14,10 +14,10 @@ category: blog
 （在PHP配置文件php.ini中，将<font color=red >output_buffering = on</font>）
 2. 熟悉几个关于PHP缓冲区的相关函数<br>
 <code>
-ob_start() 打开输出控制缓冲
-ob_get_contents() 返回输出缓冲区内容
-ob_clean() 清空输出缓冲区
-ob_get_clean() 得到当前缓冲区内容并删除缓冲区
+ob_start() 打开输出控制缓冲<br>
+ob_get_contents() 返回输出缓冲区内容<br>
+ob_clean() 清空输出缓冲区<br>
+ob_get_clean() 得到当前缓冲区内容并删除缓冲区<br>
 </code>
 
 ---
@@ -25,7 +25,7 @@ ob_get_clean() 得到当前缓冲区内容并删除缓冲区
 * demo地址：[demo_page_static](https://github.com/zhoubohan/demo_page_static)
 * ![page-static-second](/images/pageStatic/page-static-second.png)
 1. 首先创建数据库连接的文件db.php
-* ![page-static-third](/images/pageStatic/page-static-third.png)
+* ![page-static-thrid](/images/pageStatic/page-static-thrid.png)
 2. 编写动态模板文件temp.php
 * ![page-static-fifth](/images/pageStatic/page-static-fifth.png)
 3. 编写index.php(<font color=red face="consolas">判断是否生成静态文件index.shtml并生成静态文件，同时设置静态文件保存时间</font>)
