@@ -10,15 +10,14 @@ category: blog
 ---
 ### 页面纯静态化
 1. 必须将PHP的缓存开启
-（在PHP配置文件php.ini中，将<font color=red face="consolas">output_buffering = on</font>）
+（在PHP配置文件php.ini中，将<font color=red >output_buffering = on</font>）
 2. 熟悉几个关于PHP缓冲区的相关函数<br>
-```
+<code>
 ob_start() 打开输出控制缓冲
 ob_get_contents() 返回输出缓冲区内容
 ob_clean() 清空输出缓冲区
 ob_get_clean() 得到当前缓冲区内容并删除缓冲区
-
-```
+</code>
 ---
 ### demo演示
 * demo地址：[demo_page_static](https://github.com/zhoubohan/demo_page_static)
