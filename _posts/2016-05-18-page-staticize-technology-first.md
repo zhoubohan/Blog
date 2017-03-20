@@ -6,4 +6,28 @@ category: blog
 ---
 ## 静态化
 * 我们都知道，当用户直接访问静态页面时，服务器的响应时间会比一般访问动态页面要短。在生产过程中，如果我们能将用户要访问的动态页面先转化为静态页面即可加快用户访问页面的速度。但是需要注意的是我们静态化技术主要应用于那些页面内容不经常改动的页面。
-![page-static-first](/images/pageStatic/page-static-first.png)
+* ![page-static-first](/images/pageStatic/page-static-first.png)
+---
+### 页面纯静态化
+1. 必须将PHP的缓存开启
+（在PHP配置文件php.ini中，将<font color=red face="consolas">output_buffering = on</font>）
+2. 熟悉几个关于PHP缓冲区的相关函数<br>
+```
+ob_start() 打开输出控制缓冲
+ob_get_contents() 返回输出缓冲区内容
+ob_clean() 清空输出缓冲区
+ob_get_clean() 得到当前缓冲区内容并删除缓冲区
+
+```
+---
+### demo演示
+* demo地址：[demo_page_static](https://github.com/zhoubohan/demo_page_static)
+* ![page-static-second](/images/pageStatic/page-static-second.png)
+1. 首先创建数据库连接的文件db.php
+* ![page-static-third](/images/pageStatic/page-static-third.png)
+2. 编写动态模板文件temp.php
+* ![page-static-fifth](/images/pageStatic/page-static-fifth.png)
+3. 编写index.php(<font color=red face="consolas">判断是否生成静态文件index.shtml并生成静态文件，同时设置静态文件保存时间</font>)
+* ![page-static-forth](/images/pageStatic/page-static-forth.png)
+---
+> 在linux中可以使用定时扫描任务crontab来执行此处的index.php文件
