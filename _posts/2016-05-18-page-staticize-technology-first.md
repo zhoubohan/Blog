@@ -8,6 +8,7 @@ category: blog
 * 我们都知道，当用户直接访问静态页面时，服务器的响应时间会比一般访问动态页面要短。在生产过程中，如果我们能将用户要访问的动态页面先转化为静态页面即可加快用户访问页面的速度。但是需要注意的是我们静态化技术主要应用于那些页面内容不经常改动的页面。
 * ![page-static-first](/images/pageStatic/page-static-first.png)
 ---
+
 ### 页面纯静态化
 1. 必须将PHP的缓存开启
 （在PHP配置文件php.ini中，将<font color=red >output_buffering = on</font>）
@@ -18,6 +19,7 @@ ob_get_contents() 返回输出缓冲区内容
 ob_clean() 清空输出缓冲区
 ob_get_clean() 得到当前缓冲区内容并删除缓冲区
 </code>
+
 ---
 ### demo演示
 * demo地址：[demo_page_static](https://github.com/zhoubohan/demo_page_static)
