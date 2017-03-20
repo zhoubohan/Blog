@@ -6,7 +6,7 @@ category: blog
 ---
 
 ## 静态化
-* 我们都知道，当用户直接访问静态页面时，服务器的响应时间会比一般访问动态页面要短。在生产过程中，如果我们能将用户要访问的动态页面先转化为静态页面即可加快用户访问页面的速度。但是需要注意的是我们静态化技术主要应用于那些页面内容不经常改动的页面。
+* 我们都知道，当用户直接访问静态页面时，服务器的响应时间会比一般访问动态页面要短。在生产过程中，如果我们能将用户要访问的动态页面先转化为静态页面即可加快用户访问页面的速度。但是需要注意的是我们静态化技术主要应用于那些页面内容不经常改动的页面。<br/>
 ![page-static-first](/images/pageStatic/page-static-first.png)
 
 ---
@@ -25,7 +25,7 @@ category: blog
 ---
 
 ### demo演示
-* demo地址：[demo_page_static](https://github.com/zhoubohan/demo_page_static)
+* demo地址：[demo_page_static](https://github.com/zhoubohan/demo_page_static)<br/>
 ![page-static-second](/images/pageStatic/page-static-second.png)
 1. 首先创建数据库连接的文件db.php
 ![page-static-thrid](/images/pageStatic/page-static-thrid.png)
