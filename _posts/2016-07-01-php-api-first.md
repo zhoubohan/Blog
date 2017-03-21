@@ -28,7 +28,7 @@ category: blog
 
 ## APP接口的作用
 
-<table>
+<table border="1">
   <tr>
     <th>获取数据:</th>
     <td>从数据库或缓存中获取数据，然后通过接口数据返回给客户端</td>
@@ -38,4 +38,5 @@ category: blog
     <td> 通过接口提交数据给服务器，然后服务器进行入库处理或其他处理</td>
   </tr>
 </table>
+<br/>
 
