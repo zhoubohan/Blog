@@ -186,6 +186,12 @@ a.external:hover {
     margin-top: 70px;
   }
 }
+.index-wrapper .pagination{
+  position:absolute;
+  right:200px;
+  bottom:100px;
+}
+
 .index-wrapper .info-card h1 {
   font-size: 40px;
   color: #fff;

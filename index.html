@@ -24,7 +24,7 @@ layout: default
     </div>
     
     {% if paginator.total_pages > 1 %}
-    <div class="pagination" style="position:absolute;right:200px;bottom:100px;">
+    <div class="pagination">
       {% if paginator.previous_page %}
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; 上一页</a>
       {% else %}
