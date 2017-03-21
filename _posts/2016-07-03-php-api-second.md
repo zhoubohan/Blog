@@ -14,9 +14,9 @@ category: blog
 
 * 通信数据标准格式
  
- |code|message|data|
+ |code   |message   |data   |
  |---|---|---|
- |状态码|提示信息|数据|
+ |状态码   |提示信息   |数据    |
 
 ![php-api5](/images/phpApi/php-api5.png)
 
