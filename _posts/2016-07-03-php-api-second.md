@@ -14,9 +14,9 @@ category: blog
 
 * 通信数据标准格式
  
- |code   |message   |data   |
+ |code&emsp;&emsp;|message&emsp;&emsp;   |data &emsp;&emsp; |
  |---|---|---|
- |状态码   |提示信息   |数据    |
+ |状态码 &emsp;&emsp; |提示信息 &emsp;&emsp;  |数据&emsp;&emsp; |
 
 ![php-api5](/images/phpApi/php-api5.png)
 
@@ -29,8 +29,8 @@ category: blog
 
 * XML方式封装接口数据方法
  PHP生成XML数据
- 1.组装字符串
- 2.调用系统函数(具体使用方法手册都有)
+ 1. 组装字符串
+ 2. 调用系统函数(具体使用方法手册都有)
  <code>DomDocument</code>
  <code>XMLWriter</code>
  <code>SimpleXML</code>
