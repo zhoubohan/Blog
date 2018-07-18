@@ -77,6 +77,33 @@ if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_RES_RANGE|FILTER_FLAG_NO_
 
 ## 2. MySQL索引问题（联合索引或者单独索引是否生效）
 
+- 如果条件里有or,则即使其中有条件带索引也不会使用
+- like,REGEXP查询以%开头（以%结尾时是生效的）
+- 查询字符串字段没有加引号则索引不会生效
+- mysql使用全表扫描要比使用索引快
+- where语句里有不等号<b>!=</b>，无法使用索引（负向索引）(not in失效，in生效)
+- where查询条件里索引字段带有函数类似<b>DAY(column)</b>，则无法使用索引
+- <b>is null,is not null</b>无法使用索引
+- 
+- 在联合查询里（join）里，MySQL只有在主键和外键数据类型完全相同时才能使用索引
+- MySQL组合索引的生效原则（最左前缀原则，从前至后生效）
+
+
+|sql语句条件|是否生效|备注|
+|---|---|---|
+|where a=3 and b=2 and c=5|生效|中间没有断点，完全发挥作用|
+|where a=3 and c=5|a生效,c不生效|b作为断点|
+|where b=3 and c=4|b,c均不生效|a作为断点，这种写法联合索引完全发挥作用|
+|where b=4 and c=3 and a=2|生效|三者全部用上了之后与顺序无关|
+|where a=3 and b>7 and c=2|a,b生效,c不生效|b作为范围值作为断点，则c不生效但是b本身生效
+|where a>4 and b=5 and c=5|a生效,b,c不生效|同上|
+|where a=3 order by b|a生效,b在结果排序中也是用上了索引的|
+|where a=3 order by c|a生效,c不生效|没有b产生了断点|
+|where b=3 order by a|都没有生效|
+
+
+
+
 ## 3. 一个大数组，如何打印出出现次数最多的元素
 
 ```php
