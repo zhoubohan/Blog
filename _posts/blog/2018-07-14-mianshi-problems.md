@@ -37,7 +37,7 @@ if (filter_var($ip, FILTER_VALIDATE_IP)) {
 ```
 
 ```php
-判断是否为合法IPV4 IP
+3.判断是否为合法IPV4 IP
 
 if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
     //it's valid
@@ -46,7 +46,7 @@ if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
 }
 ```
 ```php
-判断是否是合法的公共IPv4地址，192.168.1.1这类的私有IP地址将会排除在外
+4.判断是否是合法的公共IPv4地址，192.168.1.1这类的私有IP地址将会排除在外
 
 if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4| FILTER_FLAG_NO_PRIV_RANGE)) {
     //it's valid
@@ -56,7 +56,7 @@ if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4| FILTER_FLAG_NO_PRIV_RA
 ```
 
 ```php
-判断是否是合法的IPv6地址
+5.判断是否是合法的IPv6地址
 
 if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_RES_RANGE)) {
     //it's valid
@@ -66,7 +66,7 @@ if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_RES_RANGE)) {
 ```
 
 ```php
-判断是否是合法公共的IPv6地址或者IPV4地址
+6.判断是否是合法公共的IPv6地址或者IPV4地址
 
 if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_RES_RANGE|FILTER_FLAG_NO_PRIV_RANGE)) {
     //it's valid
