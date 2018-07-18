@@ -238,7 +238,7 @@ var_dump($bObj);
 
 > 测试结果为
 
-![mianshi-1](/images/mianshi/mianshi-1.PNG)
+![mianshi-1](/images/mianshi/mianshi-1.png)
 
 > 即依赖注入成功，aObj和cObj成功。
  
