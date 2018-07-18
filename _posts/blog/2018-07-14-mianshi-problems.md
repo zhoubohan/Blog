@@ -7,8 +7,9 @@ category: blog
 ---
 
 ## 1.判断IPV4的IP是否合法(两种方法255.255.255.255)
-1. 自行写函数
 ```php
+1. 自行写函数
+
 function checkIp(string $ip)
 {
    $arr = explode('.', $ip);
@@ -25,41 +26,48 @@ function checkIp(string $ip)
    return true;
 }
 ```
-2. 使用php5.2.0之后的内置函数
-- 判断是否为合法IP
 ```php
+2. 使用php5.2.0之后的内置函数,判断是否为合法IP
+
 if (filter_var($ip, FILTER_VALIDATE_IP)) {
     //it's valid
 }else {
    //it's not valid 
 }
 ```
-- 判断是否为合法IPV4 IP
+
 ```php
+判断是否为合法IPV4 IP
+
 if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
     //it's valid
 }else {
    //it's not valid 
 }
 ```
-- 判断是否是合法的公共IPv4地址，192.168.1.1这类的私有IP地址将会排除在外
 ```php
+判断是否是合法的公共IPv4地址，192.168.1.1这类的私有IP地址将会排除在外
+
 if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4| FILTER_FLAG_NO_PRIV_RANGE)) {
     //it's valid
 }else {
    //it's not valid 
 }
 ```
-- 判断是否是合法的IPv6地址
+
 ```php
+判断是否是合法的IPv6地址
+
 if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_RES_RANGE)) {
     //it's valid
 }else {
    //it's not valid 
 }
 ```
-- 判断是否是合法公共的IPv6地址或者IPV4地址
+
 ```php
+判断是否是合法公共的IPv6地址或者IPV4地址
+
 if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_RES_RANGE|FILTER_FLAG_NO_PRIV_RANGE)) {
     //it's valid
 }else {
