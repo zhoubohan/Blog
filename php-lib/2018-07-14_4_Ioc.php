@@ -1,101 +1,3 @@
----
-layout: post
-title: 面试总结(链家)
-description: 每天都是新开始，不积跬步无以至千里。
-category: blog
-
----
-
-## 1.判断IPV4的IP是否合法(两种方法255.255.255.255)
-```php
-1. 自行写函数
-
-function checkIp(string $ip)
-{
-   $arr = explode('.', $ip);
-   if (count($arr) ! = 4) {
-       return false;
-   } else {
-       foreach ($arr as $v) {
-           if (($v < '0' || $v > '255')) {
-               return false;
-           }
-       }
-   }
-
-   return true;
-}
-```
-```php
-2. 使用php5.2.0之后的内置函数,判断是否为合法IP
-
-if (filter_var($ip, FILTER_VALIDATE_IP)) {
-    //it's valid
-}else {
-   //it's not valid 
-}
-```
-
-```php
-判断是否为合法IPV4 IP
-
-if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
-    //it's valid
-}else {
-   //it's not valid 
-}
-```
-```php
-判断是否是合法的公共IPv4地址，192.168.1.1这类的私有IP地址将会排除在外
-
-if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4| FILTER_FLAG_NO_PRIV_RANGE)) {
-    //it's valid
-}else {
-   //it's not valid 
-}
-```
-
-```php
-判断是否是合法的IPv6地址
-
-if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_RES_RANGE)) {
-    //it's valid
-}else {
-   //it's not valid 
-}
-```
-
-```php
-判断是否是合法公共的IPv6地址或者IPV4地址
-
-if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_RES_RANGE|FILTER_FLAG_NO_PRIV_RANGE)) {
-    //it's valid
-}else {
-   //it's not valid 
-}
-```
-
-## 2. MySQL索引问题（联合索引或者单独索引是否生效）
-
-## 3. 一个大数组，如何打印出出现次数最多的元素
-
-```php
-function countValues($file_dir='')
-{
-   $str = file_get_contents($file_dir);
-    preg_match_all('/\w+\/', $str, $matches);
-    foreach ($matches[0] as $w) {
-        $arr[$w]++; 
-    }
-    arsort($arr);
-    return $arr;
-}
-```
-> 即通过正则比较，一个个比较，如果相同则计数器++，如果不相等则跳过，依次比较
-
-## 4.PHP反射机制实现自动依赖注入
-
-```php
 <?php
 
 /*
@@ -158,11 +60,7 @@ class Ioc
         return $paramArr;
     }
 }
-```
 
-> 使用php内置反射类代码创建了一个容器类，使用该类实现对其他类的依赖注入功能，上面的依赖注入方法分为两种，一种是方法的依赖注入<code>make</code>，一种是构造函数的依赖注入<code>getMethodParams</code>,接下来用其他类进行测试
-
-```php
 class A
 {
     protected $cObj;
@@ -187,9 +85,8 @@ class A
         $this->cObj->cc();
     }
 }
-```
 
-```php
+
 class B
 {
     protected $aObj;
@@ -216,9 +113,7 @@ class B
         $this->aObj->aac();
     }
 }
-```
 
-```php
 class C
 {
     public function cc()
@@ -226,22 +121,9 @@ class C
         echo 'this is C->cc';
     }
 }
-```
 
-```php
+
 $bObj = Ioc::getInstance('B');
 $bObj->bbb();
 
 var_dump($bObj);
-```
-
-
-> 测试结果为
-
-![mianshi-1](/images/mianshi/mianshi-1.PNG)
-
-> 即依赖注入成功，aObj和cObj成功。
- 
-
-
-
