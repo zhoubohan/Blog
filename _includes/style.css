@@ -201,6 +201,18 @@ a.external:hover {
   bottom:100px;
 }
 
+.index-wrapper .pagination a {
+  display: inline-block;
+  line-height: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid #CCC;
+  background: #F9F9F9;
+  color: #333;
+  width: auto;
+  text-decoration: none;
+}
+
 .index-wrapper .info-card h1 {
   font-size: 40px;
   color: #fff;
