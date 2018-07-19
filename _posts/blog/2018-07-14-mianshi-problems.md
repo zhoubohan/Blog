@@ -88,8 +88,9 @@ if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_RES_RANGE|FILTER_FLAG_NO_
 - 在联合查询里（join）里，MySQL只有在主键和外键数据类型完全相同时才能使用索引
 - MySQL组合索引的生效原则（最左前缀原则，从前至后生效）
 
+<br>
 
-|sql语句条件|是否生效|备注|
+|sql语句条件&emsp;&emsp;|是否生效&emsp;&emsp;|备注&emsp;&emsp;|
 |---|---|---|
 |where a=3 and b=2 and c=5|生效|中间没有断点，完全发挥作用|
 |where a=3 and c=5|a生效,c不生效|b作为断点|
@@ -102,6 +103,7 @@ if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_RES_RANGE|FILTER_FLAG_NO_
 |where b=3 order by a|都没有生效|
 
 
+<br>
 
 
 ## 3. 一个大数组，如何打印出出现次数最多的元素
