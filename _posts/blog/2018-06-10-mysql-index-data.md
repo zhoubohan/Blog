@@ -38,7 +38,7 @@ category: blog
 ![mysql_index-2](/images/mysql_index/mysql_index-2.png)
 
 <b>B-tree 查找文件29的过程</b>
-![mysql_index-2](/images/mysql_index/mysql_index-3.png)
+![mysql_index-3](/images/mysql_index/mysql_index-3.png)
 
 1. 根据根节点指针找到文件目录跟磁盘块1，将其中信息导入到内存中(磁盘IO一次)
 2. 此时位于磁盘块1中有两个文件17，35，由17<29<35可得知指针P2
